@@ -45,6 +45,7 @@ namespace Deposits
             reader = cmd.ExecuteReader();
             DataTable dataTable = new DataTable();
             dataTable.Load(reader);
+            con.Close();
             DataRow row = dataTable.NewRow();
             row["BankName"] = "-Select-";
             row["Active"] = true;
@@ -53,16 +54,34 @@ namespace Deposits
             DDLBank.DisplayMember = "BankName";
             DDLBank.ValueMember = "BankId";
             DDLBank.SelectedIndex = 0;
+
+
+            con = new SqlConnection(Connection.InvAdminConn());
+            cmd = new SqlCommand("GetPropertyOwner", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            con.Open();
+            var adapter = new SqlDataAdapter(cmd);
+            var ds = new DataSet();
+            adapter.Fill(ds);
+            con.Close();
+
+            row = ds.Tables[0].NewRow();
+            row["Name"] = "-Select-";
+            ds.Tables[0].Rows.InsertAt(row, 0);
+            DdlAccountHolder.DataSource = new DataView(ds.Tables[0]);
+            DdlAccountHolder.DisplayMember = "Name";
+            DdlAccountHolder.ValueMember = "PropertyOwnerID";
+            DdlAccountHolder.SelectedIndex = 0;
         }
 
         private void tsBtnSave_Click(object sender, EventArgs e)
         {
             decimal b = 0M;
             int a = 0;
-            if (string.IsNullOrEmpty(TxtAccountHolderName.Text))
+             if (DdlAccountHolder.SelectedIndex<1)
             {
-                MessageBox.Show("Please enter Account Holder Name");
-                TxtAccountHolderName.Focus();
+                MessageBox.Show("Please select Account Holder Name");
+                DdlAccountHolder.Focus();
                 return;
             }
             else if (string.IsNullOrEmpty(TxtAccountNo.Text))
@@ -125,7 +144,7 @@ namespace Deposits
                 SqlConnection con = new SqlConnection(Connection.InvAdminConn());
                 SqlCommand cmd = new SqlCommand("InsertDepositAccount", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@AccountHolderName", TxtAccountHolderName.Text);
+                cmd.Parameters.AddWithValue("@AccountHolderName", DdlAccountHolder.SelectedValue);
                 cmd.Parameters.AddWithValue("@AccountNo", TxtAccountNo.Text);
                 cmd.Parameters.AddWithValue("@Bank", DDLBank.SelectedValue);
                 cmd.Parameters.AddWithValue("@Description", TxtDescription.Text);
@@ -171,7 +190,7 @@ namespace Deposits
                 SqlCommand cmd = new SqlCommand("UpdateDepositAccount", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("AccountId", TxtBankID.Text);
-                cmd.Parameters.AddWithValue("@AccountHolderName", TxtAccountHolderName.Text);
+                cmd.Parameters.AddWithValue("@AccountHolderName", DdlAccountHolder.SelectedValue);
                 cmd.Parameters.AddWithValue("@AccountNo", TxtAccountNo.Text);
                 cmd.Parameters.AddWithValue("@Bank", DDLBank.SelectedValue);
                 cmd.Parameters.AddWithValue("@NickName", TxtNickName.Text);
@@ -232,10 +251,10 @@ namespace Deposits
         private void clear()
         {
             TxtDescription.Text = string.Empty;
-            TxtAccountHolderName.Text = string.Empty;
             TxtAccountNo.Text = string.Empty;
             TxtNickName.Text = string.Empty;
             DDLBank.SelectedIndex = 0;
+            DdlAccountHolder.SelectedIndex = 0;
             TxtROI.Text = string.Empty;
             TxtBondNo.Text = string.Empty;
             TxtNameOFScheme.Text = string.Empty;
@@ -259,8 +278,8 @@ namespace Deposits
                 if (dataTable.Rows.Count > 0)
                 {
                     TxtBankID.Text = Convert.ToString(dataTable.Rows[0]["AccountId"]);
-                    TxtAccountHolderName.Text = Convert.ToString(dataTable.Rows[0]["AccountHolderName"]);
                     TxtAccountNo.Text = Convert.ToString(dataTable.Rows[0]["AccountNo"]);
+                    DDLBank.Text = Convert.ToString(dataTable.Rows[0]["AccountHolderName"]);
                     DDLBank.Text = Convert.ToString(dataTable.Rows[0]["Bank"]);
                     TxtDescription.Text = Convert.ToString(dataTable.Rows[0]["Description"]);
                     TxtNickName.Text = Convert.ToString(dataTable.Rows[0]["NickName"]);

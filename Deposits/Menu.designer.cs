@@ -33,11 +33,13 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.documentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EditJSWBilling = new System.Windows.Forms.ToolStripMenuItem();
             this.jSWNotBilled = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.serachOnAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.documentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.accountHoldersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,7 +88,8 @@
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem3,
-            this.documentsToolStripMenuItem});
+            this.documentsToolStripMenuItem,
+            this.accountHoldersToolStripMenuItem});
             this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(77, 27);
@@ -95,9 +98,16 @@
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(158, 24);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(194, 24);
             this.toolStripMenuItem3.Text = "Accounts";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
+            // 
+            // documentsToolStripMenuItem
+            // 
+            this.documentsToolStripMenuItem.Name = "documentsToolStripMenuItem";
+            this.documentsToolStripMenuItem.Size = new System.Drawing.Size(194, 24);
+            this.documentsToolStripMenuItem.Text = "Documents";
+            this.documentsToolStripMenuItem.Click += new System.EventHandler(this.documentsToolStripMenuItem_Click);
             // 
             // EditJSWBilling
             // 
@@ -117,22 +127,31 @@
             // 
             // toolStripMenuItem2
             // 
+            this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.serachOnAllToolStripMenuItem});
             this.toolStripMenuItem2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(76, 27);
             this.toolStripMenuItem2.Text = "Reports";
+            // 
+            // serachOnAllToolStripMenuItem
+            // 
+            this.serachOnAllToolStripMenuItem.Name = "serachOnAllToolStripMenuItem";
+            this.serachOnAllToolStripMenuItem.Size = new System.Drawing.Size(171, 24);
+            this.serachOnAllToolStripMenuItem.Text = "Search On All";
+            this.serachOnAllToolStripMenuItem.Click += new System.EventHandler(this.serachOnAllToolStripMenuItem_Click);
             // 
             // reportsToolStripMenuItem
             // 
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
             this.reportsToolStripMenuItem.Size = new System.Drawing.Size(12, 27);
             // 
-            // documentsToolStripMenuItem
+            // accountHoldersToolStripMenuItem
             // 
-            this.documentsToolStripMenuItem.Name = "documentsToolStripMenuItem";
-            this.documentsToolStripMenuItem.Size = new System.Drawing.Size(158, 24);
-            this.documentsToolStripMenuItem.Text = "Documents";
-            this.documentsToolStripMenuItem.Click += new System.EventHandler(this.documentsToolStripMenuItem_Click);
+            this.accountHoldersToolStripMenuItem.Name = "accountHoldersToolStripMenuItem";
+            this.accountHoldersToolStripMenuItem.Size = new System.Drawing.Size(194, 24);
+            this.accountHoldersToolStripMenuItem.Text = "Account Holders";
+            this.accountHoldersToolStripMenuItem.Click += new System.EventHandler(this.accountHoldersToolStripMenuItem_Click);
             // 
             // Menu
             // 
@@ -142,7 +161,7 @@
             this.Controls.Add(this.CtrlBtnMinimize);
             this.Controls.Add(this.menuStrip1);
             this.Name = "Menu";
-            this.Text = "Bank";
+            this.Text = "Deposit";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -161,5 +180,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem documentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem serachOnAllToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem accountHoldersToolStripMenuItem;
     }
 }

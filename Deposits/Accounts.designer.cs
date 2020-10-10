@@ -41,7 +41,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.TxtAccountHolderName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.TxtBankID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -76,6 +75,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.TxtBondNo = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
+            this.DdlAccountHolder = new System.Windows.Forms.ComboBox();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GvDestination)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -211,23 +211,15 @@
             this.label7.TabIndex = 92;
             this.label7.Text = "Vehicle";
             // 
-            // TxtAccountHolderName
-            // 
-            this.TxtAccountHolderName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtAccountHolderName.Location = new System.Drawing.Point(472, 86);
-            this.TxtAccountHolderName.Name = "TxtAccountHolderName";
-            this.TxtAccountHolderName.Size = new System.Drawing.Size(172, 24);
-            this.TxtAccountHolderName.TabIndex = 1;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(316, 90);
+            this.label3.Location = new System.Drawing.Point(358, 89);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(154, 18);
+            this.label3.Size = new System.Drawing.Size(110, 18);
             this.label3.TabIndex = 90;
-            this.label3.Text = "Account Holder Name";
+            this.label3.Text = "Account Holder";
             // 
             // TxtBankID
             // 
@@ -543,11 +535,21 @@
             this.label21.TabIndex = 222;
             this.label21.Text = "Bond No";
             // 
+            // DdlAccountHolder
+            // 
+            this.DdlAccountHolder.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.DdlAccountHolder.FormattingEnabled = true;
+            this.DdlAccountHolder.Location = new System.Drawing.Point(472, 88);
+            this.DdlAccountHolder.Name = "DdlAccountHolder";
+            this.DdlAccountHolder.Size = new System.Drawing.Size(172, 21);
+            this.DdlAccountHolder.TabIndex = 223;
+            // 
             // Accounts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1020, 522);
+            this.Controls.Add(this.DdlAccountHolder);
             this.Controls.Add(this.TxtBondNo);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.DtMaturityDate);
@@ -577,7 +579,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.TxtAccountHolderName);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.TxtBankID);
             this.Controls.Add(this.label2);
@@ -607,7 +608,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox TxtAccountHolderName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox TxtBankID;
         private System.Windows.Forms.Label label2;
@@ -642,5 +642,6 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox TxtBondNo;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.ComboBox DdlAccountHolder;
     }
 }

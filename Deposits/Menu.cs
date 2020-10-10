@@ -67,5 +67,29 @@ namespace Deposits
                 Accounts.Show();
             }
         }
+
+        private void serachOnAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SearchOnAll Accounts = new SearchOnAll();
+            bool frmPresent = CheckForDuplicateForm(Accounts);
+            if (frmPresent)
+                return;
+            else if (!frmPresent)
+            {
+                Accounts.Show();
+            }
+        }
+
+        private void accountHoldersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Owner Accounts = new Owner();
+            bool frmPresent = CheckForDuplicateForm(Accounts);
+            if (frmPresent)
+                return;
+            else if (!frmPresent)
+            {
+                Accounts.Show();
+            }
+        }
     }
 }
