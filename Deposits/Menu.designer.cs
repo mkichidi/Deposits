@@ -34,12 +34,14 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.documentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.accountHoldersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EditJSWBilling = new System.Windows.Forms.ToolStripMenuItem();
             this.jSWNotBilled = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.serachOnAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deadLineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.accountHoldersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statementGeneratorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,6 +111,13 @@
             this.documentsToolStripMenuItem.Text = "Documents";
             this.documentsToolStripMenuItem.Click += new System.EventHandler(this.documentsToolStripMenuItem_Click);
             // 
+            // accountHoldersToolStripMenuItem
+            // 
+            this.accountHoldersToolStripMenuItem.Name = "accountHoldersToolStripMenuItem";
+            this.accountHoldersToolStripMenuItem.Size = new System.Drawing.Size(194, 24);
+            this.accountHoldersToolStripMenuItem.Text = "Account Holders";
+            this.accountHoldersToolStripMenuItem.Click += new System.EventHandler(this.accountHoldersToolStripMenuItem_Click);
+            // 
             // EditJSWBilling
             // 
             this.EditJSWBilling.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -128,7 +137,9 @@
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.serachOnAllToolStripMenuItem});
+            this.serachOnAllToolStripMenuItem,
+            this.deadLineToolStripMenuItem,
+            this.statementGeneratorToolStripMenuItem});
             this.toolStripMenuItem2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(76, 27);
@@ -137,21 +148,28 @@
             // serachOnAllToolStripMenuItem
             // 
             this.serachOnAllToolStripMenuItem.Name = "serachOnAllToolStripMenuItem";
-            this.serachOnAllToolStripMenuItem.Size = new System.Drawing.Size(171, 24);
+            this.serachOnAllToolStripMenuItem.Size = new System.Drawing.Size(226, 24);
             this.serachOnAllToolStripMenuItem.Text = "Search On All";
             this.serachOnAllToolStripMenuItem.Click += new System.EventHandler(this.serachOnAllToolStripMenuItem_Click);
+            // 
+            // deadLineToolStripMenuItem
+            // 
+            this.deadLineToolStripMenuItem.Name = "deadLineToolStripMenuItem";
+            this.deadLineToolStripMenuItem.Size = new System.Drawing.Size(226, 24);
+            this.deadLineToolStripMenuItem.Text = "DeadLine";
+            this.deadLineToolStripMenuItem.Click += new System.EventHandler(this.deadLineToolStripMenuItem_Click);
             // 
             // reportsToolStripMenuItem
             // 
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
             this.reportsToolStripMenuItem.Size = new System.Drawing.Size(12, 27);
             // 
-            // accountHoldersToolStripMenuItem
+            // statementGeneratorToolStripMenuItem
             // 
-            this.accountHoldersToolStripMenuItem.Name = "accountHoldersToolStripMenuItem";
-            this.accountHoldersToolStripMenuItem.Size = new System.Drawing.Size(194, 24);
-            this.accountHoldersToolStripMenuItem.Text = "Account Holders";
-            this.accountHoldersToolStripMenuItem.Click += new System.EventHandler(this.accountHoldersToolStripMenuItem_Click);
+            this.statementGeneratorToolStripMenuItem.Name = "statementGeneratorToolStripMenuItem";
+            this.statementGeneratorToolStripMenuItem.Size = new System.Drawing.Size(226, 24);
+            this.statementGeneratorToolStripMenuItem.Text = "Statement Generator";
+            this.statementGeneratorToolStripMenuItem.Click += new System.EventHandler(this.statementGeneratorToolStripMenuItem_Click);
             // 
             // Menu
             // 
@@ -182,5 +200,7 @@
         private System.Windows.Forms.ToolStripMenuItem documentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem serachOnAllToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem accountHoldersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deadLineToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem statementGeneratorToolStripMenuItem;
     }
 }

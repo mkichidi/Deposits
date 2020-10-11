@@ -91,5 +91,29 @@ namespace Deposits
                 Accounts.Show();
             }
         }
+
+        private void deadLineToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reports.DeadLine Accounts = new Reports.DeadLine();
+            bool frmPresent = CheckForDuplicateForm(Accounts);
+            if (frmPresent)
+                return;
+            else if (!frmPresent)
+            {
+                Accounts.Show();
+            }
+        }
+
+        private void statementGeneratorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StatementGenerator Accounts = new StatementGenerator();
+            bool frmPresent = CheckForDuplicateForm(Accounts);
+            if (frmPresent)
+                return;
+            else if (!frmPresent)
+            {
+                Accounts.Show();
+            }
+        }
     }
 }

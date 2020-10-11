@@ -16,7 +16,7 @@ namespace Deposits
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Reports.DeadLine());
+            Application.Run(new Menu());
         }
     }
 }
