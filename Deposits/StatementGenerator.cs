@@ -74,14 +74,14 @@ namespace Deposits
                     Tuple<decimal, decimal> TDStoDeduct = Tuple.Create(0M, 0M);
 
                     DataRow row = dt.NewRow();
-                    row["Deposit"] = depositAmount;
+                    row["Deposit"] =Math.Round( depositAmount,0);
                     row["Date"] = startDate;
-                    row["Balance"] = depositAmount;
+                    row["Balance"] = Math.Round(depositAmount, 0);
                     dt.Rows.Add(row);
 
                     var nextDate = startDate.AddMonths(3).AddDays(-1);
 
-                    while (startDate < endDate)
+                    while (nextDate <= endDate)
                     {
                         var interMedtiateYear = new DateTime(nextDate.Year, 4, 1);
                         if (TimeBetween(interMedtiateYear, startDate, nextDate))
@@ -128,16 +128,16 @@ namespace Deposits
             DataRow row = dt.NewRow();
             row["Interest"] = interest;
             row["Date"] = date;
-            row["Balance"] = interest + depositAmount;
+            row["Balance"] = Math.Round(interest + depositAmount, 0);
             dt.Rows.Add(row);
 
             row = dt.NewRow();
             row["TDS"] = Math.Round((interestbkp - TDStoDeduct.Item1) / 10);
             row["Date"] = date.AddDays(1);
-            row["Balance"] = interest + depositAmount - Math.Round((interestbkp - TDStoDeduct.Item1) / 10);
+            row["Balance"] =Math.Round( interest + depositAmount - Math.Round((interestbkp - TDStoDeduct.Item1) / 10),0);
             dt.Rows.Add(row);
 
-            return interest - Math.Round(interest / 10);
+            return interest - Math.Round((interestbkp - TDStoDeduct.Item1) / 10);
         }
 
 
